@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "./embed-googleform-react/static/css/main.a6f1ba22.chunk.css",
+    "main.js": "./embed-googleform-react/static/js/main.e72c8de3.chunk.js",
+    "main.js.map": "./embed-googleform-react/static/js/main.e72c8de3.chunk.js.map",
+    "runtime-main.js": "./embed-googleform-react/static/js/runtime-main.e475396e.js",
+    "runtime-main.js.map": "./embed-googleform-react/static/js/runtime-main.e475396e.js.map",
+    "static/js/2.566aca5e.chunk.js": "./embed-googleform-react/static/js/2.566aca5e.chunk.js",
+    "static/js/2.566aca5e.chunk.js.map": "./embed-googleform-react/static/js/2.566aca5e.chunk.js.map",
+    "index.html": "./embed-googleform-react/index.html",
+    "precache-manifest.dd0486fa8d0fbcfb92c5b0ae2451e9e6.js": "./embed-googleform-react/precache-manifest.dd0486fa8d0fbcfb92c5b0ae2451e9e6.js",
+    "service-worker.js": "./embed-googleform-react/service-worker.js",
+    "static/css/main.a6f1ba22.chunk.css.map": "./embed-googleform-react/static/css/main.a6f1ba22.chunk.css.map",
+    "static/media/image_0.jpg": "./embed-googleform-react/static/media/image_0.29fe41d0.jpg",
+    "static/media/image_1.jpg": "./embed-googleform-react/static/media/image_1.bc11470f.jpg",
+    "static/media/image_2.jpg": "./embed-googleform-react/static/media/image_2.eda17f27.jpg",
+    "static/media/image_3.jpg": "./embed-googleform-react/static/media/image_3.d181e9dd.jpg",
+    "static/media/image_4.jpg": "./embed-googleform-react/static/media/image_4.7b2ac378.jpg"
+  }
+}
