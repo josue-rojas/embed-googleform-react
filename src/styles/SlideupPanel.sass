@@ -1,0 +1,124 @@
+@import './mixins.sass'
+@import './colors.sass'
+
+// TODO: change max-height for toggle cause it wont scroll if content is bigger (for now there is scroll)
+
+$size-menu-button: 44px
+
+.slideup-panel
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+  .menu-button
+    width: 100%
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.25)
+    background-color: white
+    padding: 15px 5px
+    text-align: center
+    margin-top: auto
+    cursor: pointer
+    border-bottom: 1px solid rgba(87, 169, 164, 0.57)
+    font-weight: bold
+    font-size: 1.05rem
+    letter-spacing: .01rem
+    color: #1c9995
+  .main
+    overflow: hidden
+    transition: max-height 350ms, min-height 350ms, padding 350ms
+    transition-timing-function: ease-in
+    background-color: white
+    padding: 15px
+    box-sizing: border-box
+    width: 100%
+    display: flex
+    flex-direction: column
+    .terms
+      text-align: justify
+      padding: 0 5px
+    form
+      padding: 0 10px
+      margin-bottom: 10px
+      +medium-devices
+        margin-top: 30px
+    footer
+      text-align: center
+      margin-top: auto
+      margin-bottom: 10px
+      a
+        color: $accent-color
+        font-size: .95rem
+    +medium-devices
+      flex: 1
+      padding: 25px
+      box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.25)
+    .title, .message
+      text-align: center
+    .title
+      margin: 30px 0 20px
+      letter-spacing: .05rem
+    .message
+      margin-bottom: 40px
+    input:not([type="submit"])
+      width: 100%
+      margin-bottom: 12px
+      margin-top: 5px
+      font-size: 16px
+      padding: 5px 2px
+    .button-wrapper
+      position: relative
+      .loader
+        position: absolute
+        background-color: $accent-color
+        height: 100%
+        width: 100%
+        top: 0
+        left: 0
+        width: 90px
+        border-radius: 5px
+        margin-left: calc(50% - 45px)
+        cursor: progress
+        display: flex
+        justify-content: center
+        align-items: center
+        &::after
+          content: ""
+          display: block
+          height: 22px
+          width: 22px
+          border-radius: 100%
+          border-left: 3px solid $error_color
+          border-right: 3px solid $error_color
+          border-top: 3px solid rgba(255, 255, 255, .3)
+          border-bottom: 3px solid rgba(255, 255, 255, .3)
+          animation: spin 1s linear infinite
+        &.hide
+          &::after
+          display: none
+        &.show
+          display: flex
+  &.hidden
+    .menu-button
+      color: $accent-color
+    .main
+      max-height: 0px
+      min-height: 0
+      padding: 0px
+      +medium-devices
+        min-height: 0
+        max-height: none
+        padding: 25px
+  &.show
+    .main
+      min-height: calc(100vh - #{$size-menu-button})
+      max-height: calc(100vh - #{$size-menu-button})
+      overflow: scroll
+      -webkit-overflow-scrolling: touch
+      +medium-devices
+        min-height: 0
+        max-height: none
+
++keyframes(spin)
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)

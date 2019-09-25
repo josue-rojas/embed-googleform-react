@@ -1,0 +1,89 @@
+@import './colors.sass'
+@import './mixins.sass'
+
+.text-input
+  text-align: left
+  font-size: .95rem
+  position: relative
+  &::after
+    content: ""
+    display: block
+    background-color: $accent-color
+    width: 0
+    position: absolute
+    height: 1px
+    bottom: 0px
+    margin: 0 50%
+    transition: width 250ms, margin 250ms
+    transition-timing-function: ease-in
+  input
+    box-sizing: border-box
+    border-radius: 0
+    width: 100%
+    margin-top: 7px
+    padding: 0px 3px 5px
+    min-height: 30px
+    font-size: 16px
+    display: block
+    outline: none
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    background-color: rgba(0,0,0,0)
+    border: 0px
+    border-bottom: 1px solid $shadow_text
+    // color: white
+    &:disabled
+      color: $shadow_text
+      cursor: not-allowed
+    +medium-devices
+      font-size: .9rem
+    &::placeholder
+      color: $shadow_text
+  &.inverse
+    input
+      color: $dark_blue_bottom
+    &::after
+      background-color: $dark_blue_bottom
+  &.focus::after
+    width: 100%
+    margin: 0%
+  &.error
+    input::placeholder
+      color: $error_color
+    &::after
+      width: 100%
+      margin: 0%
+      background-color: $error_color
+
+// .checkbox
+//   .check
+//     width: 20px
+//     height: 20px
+//     background-color: $dark_blue_shade
+//     display: inline-block
+//     border-radius: 3px
+//     cursor: pointer
+//     padding: 2px
+//     position: relative
+//     border: 1px solid $dark_blue_shade
+//     transition: background-color 200ms
+//     user-select: none
+//     margin-right: 5px
+//     &.error
+//       border-color: $error_color
+//     &::after
+//       content: ""
+//       display: block
+//       height: 16px
+//       width: 8px
+//       border-bottom: 4px solid $dark_blue_bottom
+//       border-right: 4px solid $dark_blue_bottom
+//       margin: -2px 0 0 3px
+//       transform: rotate(45deg)
+//       opacity: 0
+//       transition: opacity 150ms
+//     &.checked
+//       background-color: $light_blue_bottom
+//       &::after
+//         opacity: 1

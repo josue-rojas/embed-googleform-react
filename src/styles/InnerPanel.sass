@@ -1,0 +1,36 @@
+@import 'colors.sass'
+
+$toggleHeight: 17px
+$slideupPadding: 25px
+
+.inner-panel
+  .toggle-button-space
+    height: 17px
+    min-width: 1px
+    z-index: -2
+  .inner-panel-content
+    position: absolute
+    padding-bottom: $slideupPadding
+    padding-top: 0
+    bottom: 10px
+    width: 100%
+    left: 0
+    text-align: center
+    margin-top: auto
+    background-color: white
+    z-index: 0
+    transition: 350ms height, 350ms padding
+    height: 42px
+  .toggle-button
+    text-decoration: underline
+    color: $accent-color
+    font-size: .95rem
+    cursor: pointer
+  .inner-panel-extra
+    transition: 350ms height
+  &.hide
+    .inner-panel-content
+  &.show
+    .inner-panel-content
+      height: calc(100% - #{$toggleHeight})
+      padding-top: $slideupPadding
