@@ -29,6 +29,7 @@ export default class SlideupPanel extends React.Component {
       },
       form_message: '',
       isSubmitting: false,
+      buttonClick: false,
     };
     this.changeWindow = this.changeWindow.bind(this);
     this.toggleActive = this.toggleActive.bind(this);
@@ -79,7 +80,10 @@ export default class SlideupPanel extends React.Component {
       this.setState(errors);
       return event.preventDefault();
     }
-    this.setState({ isSubmitting: true });
+    this.setState({
+      isSubmitting: true,
+      buttonClick: true
+     });
     return true;
   }
 
@@ -141,7 +145,7 @@ export default class SlideupPanel extends React.Component {
           {this.submitButton(this.state.isSubmitting)}
         </form>
         <div className='message'>
-          {this.state.form_message}
+          {this.state.buttonClick ? this.state.form_message : ''}
         </div>
         <footer>
           <a href='./#terms'>Terms and Conditions</a>
